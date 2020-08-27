@@ -7,18 +7,21 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search-photos.component.css']
 })
 export class SearchPhotosComponent implements OnInit {
+  searchTerm: string;
 
   constructor(private searchService: SearchService) { }
 
   ngOnInit() {
   }
 
-  search() {
-    this.searchService.searchWord().subscribe(
-      res => {
-        console.log(res)
-      }
-    )
+  search(event: any) {
+    this.searchTerm = event.target.value.toLowerCase();
+    // event.preventDefault();
+    console.log(this.searchTerm)
+    this.searchService.searchWord(this.searchTerm).toPromise()
+    .then(res => {
+      console.log(res)
+    })
   }
 
 }
