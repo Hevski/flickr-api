@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchPhotosComponent implements OnInit {
   searchTerm: string;
+  photos: Array<any> = [];
 
   constructor(private searchService: SearchService) { }
 
@@ -16,12 +17,19 @@ export class SearchPhotosComponent implements OnInit {
 
   search(event: any) {
     this.searchTerm = event.target.value.toLowerCase();
-    // event.preventDefault();
-    console.log(this.searchTerm)
     this.searchService.searchWord(this.searchTerm).toPromise()
     .then(res => {
-      console.log(res)
+      this.photos = res;
+      console.log(this.photos)
     })
   }
+
+  // onScroll() {
+  //   this.searchService.searchWord(this.searchTerm)
+  //       .toPromise()
+  //       .then(res => {
+  //         this.images = this.images.concat(res);
+  //       });
+  // }
 
 }
