@@ -1,3 +1,4 @@
+import { SearchService } from './search.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,13 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchPhotosComponent implements OnInit {
 
-  constructor() { }
+  constructor(private searchService: SearchService) { }
 
   ngOnInit() {
   }
 
   search() {
-    console.log('hello')
+    this.searchService.searchWord().subscribe(
+      res => {
+        console.log(res)
+      }
+    )
   }
 
 }
