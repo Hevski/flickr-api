@@ -24,12 +24,12 @@ export class SearchPhotosComponent implements OnInit {
     })
   }
 
-  // onScroll() {
-  //   this.searchService.searchWord(this.searchTerm)
-  //       .toPromise()
-  //       .then(res => {
-  //         this.images = this.images.concat(res);
-  //       });
-  // }
+  onScroll() {
+    this.searchService.searchWord(this.searchTerm)
+    .toPromise()
+    .then(res => {
+      this.photos = this.photos.concat(res);
+    });
+  }
 
 }
