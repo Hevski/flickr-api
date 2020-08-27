@@ -1,0 +1,15 @@
+img {
+  margin: auto;
+  display: block;
+  width: 50vw;
+}
+
+.search {
+  margin: auto;
+  display: block;
+  height: 5vh;
+  width: 50vw;
+  font-size: large;
+  padding: 15px;
+  border-radius: 5px;
+}
