@@ -41,4 +41,12 @@ export class SearchPhotosComponent implements OnInit {
     });
   }
 
+  getInfo(photoId) {
+    this.searchService.getInfo(photoId).subscribe(
+      res => {
+        console.log(res)
+      }
+    )
+  }
+
 }

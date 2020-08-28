@@ -4,9 +4,9 @@
   <div class="row">
       <div *ngFor="let photo of photos">
           <div class="card">
-              <a href="{{photo.url}}_b.jpg">
-                  <img src="{{photo.url}}_m.jpg" title="{{photo.title}}">
-              </a>
+              <!-- <a href="{{photo.url}}_b.jpg"> -->
+                  <img src="{{photo.url}}_m.jpg" title="{{photo.title}}" (click)="getInfo(photo.id)">
+              <!-- </a> -->
           </div>
       </div>
   </div>

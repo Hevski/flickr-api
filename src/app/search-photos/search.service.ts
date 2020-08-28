@@ -33,11 +33,18 @@ export class SearchService {
       res.photos.photo.forEach((photo: Photo) => {
         const photoObject = {
           url: `https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}`,
-          title: photo.title
+          title: photo.title,
+          id: photo.id
         };
         photoArray.push(photoObject);
       });
       return photoArray;
     }))
   } 
+
+  getInfo(photoId) {
+    const FLICKR_API_KEY = environment.flickr.api_key
+    const url = `https://www.flickr.com/services/rest/?method=flickr.photos.getInfo&api_key=${FLICKR_API_KEY}&photo_id=${photoId}&format=json&nojsoncallback=1`
+    return this.http.get(url)
+  }
 }
