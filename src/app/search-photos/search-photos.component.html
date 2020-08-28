@@ -1,5 +1,6 @@
 <div class="centre">
   <input placeholder="Search photos..." type="search" (keydown.enter)="search($event)" class="search">
+  <ngb-alert *ngIf="noPhotos" type="info" class="alert" [dismissible]="false">No photos to display</ngb-alert>
   <div class="row">
       <div *ngFor="let photo of photos">
           <div class="card">
