@@ -9,21 +9,30 @@ import { Component, OnInit } from '@angular/core';
 export class SearchPhotosComponent implements OnInit {
   searchTerm: string;
   photos: Array<any> = [];
+  noPhotos: boolean = false;
 
   constructor(private searchService: SearchService) { }
 
   ngOnInit() {
   }
 
+  /**
+   * Search a users input
+   * @param event 
+   */
   search(event: any) {
     this.searchTerm = event.target.value.toLowerCase();
-    this.searchService.searchWord(this.searchTerm).toPromise()
-    .then(res => {
-      this.photos = res;
-      console.log(this.photos)
-    })
+    this.searchService.searchWord(this.searchTerm).subscribe(
+      res => {
+        this.photos = res
+        this.photos.length < 1 ? this.noPhotos = true : this.noPhotos = false;
+      }
+    )
   }
 
+  /**
+   * on scroll, concat results to photo array to make infinite scroll
+   */
   onScroll() {
     this.searchService.searchWord(this.searchTerm)
     .toPromise()

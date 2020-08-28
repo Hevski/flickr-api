@@ -5,9 +5,7 @@
 export const environment = {
   production: false,
   flickr: {
-    api_key: '0d1d990edff9415e90523db105364b35',
-    auth_token: '72157715692196218-52fcc40ecf51e26c',
-    api_sig: '3a5d8ccf6dd9699cbdaa2053e6424a6f'
+    api_key: '089926cfed45046308fb5514cb3f79a3',
   }
 };
 
