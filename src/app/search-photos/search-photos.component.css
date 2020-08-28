@@ -6,10 +6,22 @@ img {
 
 .search {
   margin: auto;
+  margin-bottom: 5px;
   display: block;
   height: 5vh;
   width: 50vw;
   font-size: large;
   padding: 15px;
+  border-radius: 5px;
+}
+
+.alert {
+  margin: auto;
+  display: block;
+  width: 50vw;
+  padding: 20px;
+  background-color: #fbab50;
+  color: white;
+  margin-bottom: 15px;
   border-radius: 5px;
 }
