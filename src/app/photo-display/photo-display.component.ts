@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-photo-display',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./photo-display.component.css']
 })
 export class PhotoDisplayComponent implements OnInit {
+  @Input() photoTitle: string
 
   constructor() { }
 

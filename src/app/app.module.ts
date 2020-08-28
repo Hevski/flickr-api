@@ -7,6 +7,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { AppComponent } from './app.component';
 import { SearchPhotosComponent } from './search-photos/search-photos.component';
 import { PhotoDisplayComponent } from './photo-display/photo-display.component';
+import { AppRoutingModule } from './app-routing.module';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { PhotoDisplayComponent } from './photo-display/photo-display.component';
     BrowserModule,
     HttpClientModule,
     InfiniteScrollModule,
-    NgbModule
+    NgbModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
