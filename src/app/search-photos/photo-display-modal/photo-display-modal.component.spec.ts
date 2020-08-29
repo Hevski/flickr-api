@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PhotoDisplayComponent } from './photo-display.component';
+import { PhotoDisplayModalComponent } from './photo-display-modal.component';
 
-describe('PhotoDisplayComponent', () => {
-  let component: PhotoDisplayComponent;
-  let fixture: ComponentFixture<PhotoDisplayComponent>;
+describe('PhotoDisplayModalComponent', () => {
+  let component: PhotoDisplayModalComponent;
+  let fixture: ComponentFixture<PhotoDisplayModalComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PhotoDisplayComponent ]
+      declarations: [ PhotoDisplayModalComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PhotoDisplayComponent);
+    fixture = TestBed.createComponent(PhotoDisplayModalComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

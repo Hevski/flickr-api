@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { SearchPhotosComponent } from './search-photos/search-photos.component';
 import { PhotoDisplayComponent } from './photo-display/photo-display.component';
 import { AppRoutingModule } from './app-routing.module';
+import { PhotoDisplayModalComponent } from './search-photos/photo-display-modal/photo-display-modal.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     SearchPhotosComponent,
-    PhotoDisplayComponent
+    PhotoDisplayComponent,
+    PhotoDisplayModalComponent
   ],
   imports: [
     BrowserModule,
