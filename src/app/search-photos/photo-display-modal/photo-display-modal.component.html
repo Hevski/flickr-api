@@ -3,7 +3,9 @@
   <div body class="modal-body">
     <p>{{photoTitle}}</p>
     <img class="photo-size" src="{{photo.url}}_m.jpg">
-    <!-- <p>{{photoInfo}}</p> -->
+    <div *ngIf="photoInfo">
+      <p>{{photoInfo.description._content}}</p>
+    </div>
   </div>
 
 </app-modal>

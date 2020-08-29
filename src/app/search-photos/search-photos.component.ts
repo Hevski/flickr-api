@@ -34,13 +34,13 @@ export class SearchPhotosComponent implements OnInit {
     )
   }
 
-  getInfo(photoId) {
-    this.searchService.getInfo(photoId).subscribe(
-      res => {
-        this.photoInfo = res;
-      }
-    )
-  }
+  // getInfo(photoId) {
+  //   this.searchService.getInfo(photoId).subscribe(
+  //     res => {
+  //       this.photoInfo = res;
+  //     }
+  //   )
+  // }
 
   /**
    * on scroll, concat results to photo array to make infinite scroll
@@ -64,7 +64,6 @@ export class SearchPhotosComponent implements OnInit {
     modalRef.componentInstance.title = 'Photo Details';
     modalRef.componentInstance.photo = photo;
     modalRef.componentInstance.photoTitle = photo.title;
-    modalRef.componentInstance.photoInfo = this.photoInfo;
   }
 
 }
