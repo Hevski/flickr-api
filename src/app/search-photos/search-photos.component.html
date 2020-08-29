@@ -1,14 +1,14 @@
 <div class="centre">
-  <input placeholder="Search photos..." type="search" (keydown.enter)="search($event)" class="search">
+  <input placeholder="Search photos..." type="search" (keydown.enter)="search($event)" class="mb-3 mt-3 search">
   <ngb-alert *ngIf="noPhotos" type="info" class="alert" [dismissible]="false">No photos to display</ngb-alert>
   <div class="row">
       <div *ngFor="let photo of photos">
           <div (click)="openModal(photo); getInfo(photo.id)">
-            <img src="{{photo.url}}_m.jpg" title="{{photo.title}}">
+            <img class="m-2 d-flex" src="{{photo.url}}_m.jpg" title="{{photo.title}}">
           </div>
       </div>
   </div>
-  <!-- <div class="search-results" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50"
+  <div class="search-results" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50"
       (scrolled)="onScroll()">
-  </div> -->
+  </div>
 </div>

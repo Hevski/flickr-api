@@ -1,12 +1,11 @@
 img {
   margin: auto;
   display: block;
-  width: 50vw;
+  width: 30vw;
 }
 
 .search {
   margin: auto;
-  margin-bottom: 5px;
   display: block;
   height: 5vh;
   width: 50vw;

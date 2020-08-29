@@ -58,7 +58,8 @@ export class SearchPhotosComponent implements OnInit {
       windowClass: 'photoDisplayModal',
       keyboard: false,
       backdrop: 'static',
-      size: 'lg'
+      size: 'xl',
+      centered: true
     });
     modalRef.componentInstance.title = 'Photo Details';
     modalRef.componentInstance.photo = photo;
