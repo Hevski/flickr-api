@@ -3,14 +3,12 @@
   <ngb-alert *ngIf="noPhotos" type="info" class="alert" [dismissible]="false">No photos to display</ngb-alert>
   <div class="row">
       <div *ngFor="let photo of photos">
-          <div class="card">
-              <app-photo-display [photoTitle]="photo.title"></app-photo-display>
-                  <img src="{{photo.url}}_m.jpg" title="{{photo.title}}" (click)="getInfo(photo.id)">
-
+          <div (click)=openModal()>
+            <img src="{{photo.url}}_m.jpg" title="{{photo.title}}" (click)="getInfo(photo.id)">
           </div>
       </div>
   </div>
-  <div class="search-results" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50"
+  <!-- <div class="search-results" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollThrottle]="50"
       (scrolled)="onScroll()">
-  </div>
+  </div> -->
 </div>

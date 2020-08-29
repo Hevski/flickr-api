@@ -16,12 +16,10 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
       {{ body }}
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-primary" (click)="activeModal.close(true)">
-        Confirm
-      </button>
-      <button type="button" class="btn btn-outline-dark" ngbAutofocus (click)="activeModal.dismiss()">Close</button>
+      <button type="button" ngbAutofocus (click)="activeModal.dismiss()">Close</button>
     </div>
   `,
+  styleUrls: ['./modal.component.css']
 })
 export class ModalComponent implements OnInit {
     @Input() title = '';

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-photo-display-modal',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./photo-display-modal.component.css']
 })
 export class PhotoDisplayModalComponent implements OnInit {
+  @Input() title: string;
 
-  constructor() { }
+  constructor(private modalService: NgbActiveModal) { }
 
   ngOnInit() {
+  }
+
+  /**
+ * Closes Modal
+ */
+  closeModal() {
+    this.modalService.close();
   }
 
 }
