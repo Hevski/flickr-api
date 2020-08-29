@@ -4,7 +4,8 @@
     <p>{{photoTitle}}</p>
     <img class="photo-size" src="{{photo.url}}_m.jpg">
     <div *ngIf="photoInfo">
-      <p>{{photoInfo.description._content}}</p>
+      <p>Description: {{photoInfo.description._content}}</p>
+      <p>Views: {{photoInfo.views}}</p>
     </div>
   </div>
 
