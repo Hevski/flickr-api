@@ -3,8 +3,8 @@
   <ngb-alert *ngIf="noPhotos" type="info" class="alert" [dismissible]="false">No photos to display</ngb-alert>
   <div class="row">
       <div *ngFor="let photo of photos">
-          <div (click)=openModal(photo)>
-            <img src="{{photo.url}}_m.jpg" title="{{photo.title}}" (click)="getInfo(photo.id)">
+          <div (click)="openModal(photo); getInfo(photo.id)">
+            <img src="{{photo.url}}_m.jpg" title="{{photo.title}}">
           </div>
       </div>
   </div>
