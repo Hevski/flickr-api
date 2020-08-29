@@ -13,6 +13,7 @@ export class SearchPhotosComponent implements OnInit {
   searchTerm: string;
   photos: Array<any> = [];
   noPhotos: boolean = false;
+  photoInfo: any;
 
   constructor(private searchService: SearchService, private modalService: NgbModal) { }
 
@@ -36,7 +37,7 @@ export class SearchPhotosComponent implements OnInit {
   getInfo(photoId) {
     this.searchService.getInfo(photoId).subscribe(
       res => {
-        console.log(res)
+        this.photoInfo = res;
       }
     )
   }
@@ -60,6 +61,8 @@ export class SearchPhotosComponent implements OnInit {
     });
     modalRef.componentInstance.title = 'Photo Details';
     modalRef.componentInstance.photo = photo;
+    modalRef.componentInstance.photoTitle = photo.title;
+    modalRef.componentInstance.photoInfo = this.photoInfo;
   }
 
 }

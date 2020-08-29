@@ -8,10 +8,14 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class PhotoDisplayModalComponent implements OnInit {
   @Input() title: string;
+  @Input() photoTitle: string;
+  @Input() photo: any;
+  @Input() photoInfo: any;
 
   constructor(private modalService: NgbActiveModal) { }
 
   ngOnInit() {
+    console.log(this.photoInfo)
   }
 
   /**
