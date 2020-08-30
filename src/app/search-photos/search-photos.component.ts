@@ -53,16 +53,18 @@ export class SearchPhotosComponent implements OnInit {
    * @param photo 
    */
   openModal(photo: SelectedPhoto) {
-    const modalRef = this.modalService.open(PhotoDisplayModalComponent, {
-      windowClass: 'photoDisplayModal',
-      keyboard: false,
-      backdrop: 'static',
-      size: 'xl',
-      centered: true
-    });
-    modalRef.componentInstance.title = 'Photo Details';
-    modalRef.componentInstance.photo = photo;
-    modalRef.componentInstance.photoTitle = photo.title;
+    if (photo) {
+      const modalRef = this.modalService.open(PhotoDisplayModalComponent, {
+        windowClass: 'photoDisplayModal',
+        keyboard: false,
+        backdrop: 'static',
+        size: 'xl',
+        centered: true
+      });
+      modalRef.componentInstance.title = 'Photo Details';
+      modalRef.componentInstance.photo = photo;
+      modalRef.componentInstance.photoTitle = photo.title;
+    }
   }
 
 }

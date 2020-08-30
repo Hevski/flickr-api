@@ -1,5 +1,5 @@
 <app-modal [title]="title">
-  <div body class="modal-body">
+  <div *ngIf="photo" body class="modal-body">
     <p><strong>Title: </strong>{{photoTitle}}</p>
     <img class="photo-size" src="{{photo.url}}_m.jpg">
     <div *ngIf="photoInfo">
