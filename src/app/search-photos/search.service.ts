@@ -29,7 +29,6 @@ export class SearchService {
     const url = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${FLICKR_API_KEY}&text=${searchTerm }&format=json&nojsoncallback=1`
     return this.http.get(url).pipe(map((res: FlickrOutput) => {
       const photoArray = [];
-      console.log(res)
       res.photos.photo.forEach((photo: Photo) => {
         const photoObject = {
           url: `https://farm${photo.farm}.staticflickr.com/${photo.server}/${photo.id}_${photo.secret}`,
