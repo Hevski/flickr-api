@@ -1,5 +1,5 @@
 import { PhotoDisplayModalComponent } from './photo-display-modal/photo-display-modal.component';
-import { SearchService } from './search.service';
+import { SearchService, Photo } from './search.service';
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
@@ -13,9 +13,11 @@ export class SearchPhotosComponent implements OnInit {
   searchTerm: string;
   photos: Array<any> = [];
   noPhotos: boolean = false;
-  photoInfo: any;
 
-  constructor(private searchService: SearchService, private modalService: NgbModal) { }
+  constructor(
+    private searchService: SearchService, 
+    private modalService: NgbModal,
+  ) { }
 
   ngOnInit() {
   }
@@ -34,14 +36,6 @@ export class SearchPhotosComponent implements OnInit {
     )
   }
 
-  // getInfo(photoId) {
-  //   this.searchService.getInfo(photoId).subscribe(
-  //     res => {
-  //       this.photoInfo = res;
-  //     }
-  //   )
-  // }
-
   /**
    * on scroll, concat results to photo array to make infinite scroll
    */
@@ -53,7 +47,11 @@ export class SearchPhotosComponent implements OnInit {
     });
   }
 
-  openModal(photo: any) {
+  /**
+   * Opens modal to display selected photo
+   * @param photo 
+   */
+  openModal(photo: Photo) {
     const modalRef = this.modalService.open(PhotoDisplayModalComponent, {
       windowClass: 'photoDisplayModal',
       keyboard: false,

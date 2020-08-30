@@ -1,4 +1,4 @@
-import { SearchService } from './../search.service';
+import { SearchService, Photo } from './../search.service';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Component, OnInit, Input } from '@angular/core';
 
@@ -10,7 +10,7 @@ import { Component, OnInit, Input } from '@angular/core';
 export class PhotoDisplayModalComponent implements OnInit {
   @Input() title: string;
   @Input() photoTitle: string;
-  @Input() photo: any;
+  @Input() photo: Photo;
   photoInfo: any;
 
   constructor(private modalService: NgbActiveModal, private searchService: SearchService) { }

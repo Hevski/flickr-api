@@ -1,7 +1,7 @@
 <div class="centre">
   <input placeholder="Search photos..." type="search" (keydown.enter)="search($event)" class="mb-3 mt-3 search">
   <ngb-alert *ngIf="noPhotos" type="info" class="alert" [dismissible]="false">No photos to display</ngb-alert>
-  <div class="row">
+  <div class="d-flex flex-wrap">
       <div *ngFor="let photo of photos">
           <div (click)="openModal(photo)">
             <img class="m-2 d-flex" src="{{photo.url}}_m.jpg" title="{{photo.title}}">
