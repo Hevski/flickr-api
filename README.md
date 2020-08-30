@@ -14,8 +14,9 @@ Run npm i to install dependancies
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-Run `ng serve --open` to open browser automatically
+- Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- Run `ng serve --open` to open browser automatically.
+- Add your flickr api key to the environment.ts file in place of API_KEY_HERE
 
 ## Code scaffolding
 
