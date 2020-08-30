@@ -20,12 +20,35 @@ describe('SearchPhotosComponent', () => {
   }));
 
   beforeEach(() => {
+    const PHOTO_DATA = [ 
+      {
+        id: 1,
+        title: 'test1',
+        url: 'www.test1.com',
+      },
+      {
+        id: 2,
+        title: 'test2',
+        url: 'www.test2.com',
+      },
+      {
+        id: 3,
+        title: 'test3',
+        url: 'www.test1.com',
+      },
+    ]
     fixture = TestBed.createComponent(SearchPhotosComponent);
     component = fixture.componentInstance;
+    component.photos = PHOTO_DATA
     fixture.detectChanges();
   });
 
   it('should create', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('renders three image elements', () => {
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelectorAll('img').length).toEqual(3);
   });
 });

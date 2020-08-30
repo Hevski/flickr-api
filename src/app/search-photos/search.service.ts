@@ -11,7 +11,7 @@ export interface Photo {
   title: string;
 }
 
-export interface FlickrOutput {
+export interface FlickrData {
   photos: {
     photo: Photo[];
   };
@@ -24,10 +24,14 @@ export class SearchService {
 
   constructor(private http: HttpClient) { }
 
+  /**
+   * Hits flickr search api and pushes photo data into array
+   * @param searchTerm 
+   */
   searchWord(searchTerm: string) {
     const FLICKR_API_KEY = environment.flickr.api_key
     const url = `https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=${FLICKR_API_KEY}&text=${searchTerm }&format=json&nojsoncallback=1`
-    return this.http.get(url).pipe(map((res: FlickrOutput) => {
+    return this.http.get(url).pipe(map((res: FlickrData) => {
       const photoArray = [];
       res.photos.photo.forEach((photo: Photo) => {
         const photoObject = {
@@ -41,6 +45,10 @@ export class SearchService {
     }))
   } 
 
+  /**
+   * Gets the info for a photo by hitting flickrs getInfo api
+   * @param photoId 
+   */
   getInfo(photoId) {
     const FLICKR_API_KEY = environment.flickr.api_key
     const url = `https://www.flickr.com/services/rest/?method=flickr.photos.getInfo&api_key=${FLICKR_API_KEY}&photo_id=${photoId}&format=json&nojsoncallback=1`
