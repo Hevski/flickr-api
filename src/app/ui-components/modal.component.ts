@@ -16,7 +16,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
       {{ body }}
     </div>
     <div class="modal-footer">
-      <button type="button" ngbAutofocus (click)="activeModal.dismiss()">Close</button>
+      <button type="button" class="btn btn-primary" ngbAutofocus (click)="activeModal.dismiss()">Close</button>
     </div>
   `,
   styleUrls: ['./modal.component.css']

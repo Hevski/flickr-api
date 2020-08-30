@@ -20,7 +20,6 @@ export class PhotoDisplayModalComponent implements OnInit {
       this.searchService.getInfo(this.photo.id).subscribe(
         res => {
           this.photoInfo = res['photo']
-          console.log(this.photoInfo)
         }
       )
     }

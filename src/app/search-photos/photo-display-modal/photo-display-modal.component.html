@@ -1,12 +1,10 @@
 <app-modal [title]="title">
-
   <div body class="modal-body">
-    <p>{{photoTitle}}</p>
+    <p><strong>Title:</strong>{{photoTitle}}</p>
     <img class="photo-size" src="{{photo.url}}_m.jpg">
     <div *ngIf="photoInfo">
-      <p>Description: {{photoInfo.description._content}}</p>
-      <p>Views: {{photoInfo.views}}</p>
+      <p><strong>Description:</strong> {{photoInfo.description._content}}</p>
+      <p><strong>Views:</strong> {{photoInfo.views}}</p>
     </div>
   </div>
-
 </app-modal>
