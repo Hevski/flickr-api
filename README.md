@@ -2,9 +2,20 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.21.
 
+A user can search for any word in the search box and an infinate list of photos will appear,
+each photo is clickable which opens a modal with the photo title, the image, a description if
+it has one and the number of views the photo has had on flickr.
+
+The app is built with Angular 8, it is the framework I use most regularly although I do have experience with AngularJS, React and Vue.
+
+## Install
+
+Run npm i to install dependancies
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve --open` to open browser automatically
 
 ## Code scaffolding
 
