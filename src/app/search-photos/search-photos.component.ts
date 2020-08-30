@@ -1,5 +1,6 @@
+import { SelectedPhoto } from './photo.model';
 import { PhotoDisplayModalComponent } from './photo-display-modal/photo-display-modal.component';
-import { SearchService, Photo } from './search.service';
+import { SearchService } from './search.service';
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
@@ -51,7 +52,7 @@ export class SearchPhotosComponent implements OnInit {
    * Opens modal to display selected photo
    * @param photo 
    */
-  openModal(photo: Photo) {
+  openModal(photo: SelectedPhoto) {
     const modalRef = this.modalService.open(PhotoDisplayModalComponent, {
       windowClass: 'photoDisplayModal',
       keyboard: false,
